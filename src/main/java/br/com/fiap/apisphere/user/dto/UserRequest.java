@@ -4,11 +4,13 @@ import br.com.fiap.apisphere.user.User;
 
 import java.time.LocalDateTime;
 
-public class UserRequest {
-    String name;
-    String bio;
-    String email;
-    String password;
+public record UserRequest(
+        String name,
+        String bio,
+        String email,
+        String password
+) {
+
 
     public User toModel() {
         return User.builder()
